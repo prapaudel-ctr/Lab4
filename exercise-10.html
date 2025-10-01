@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 10</title>
+    <script src="js/square-closure.js"></script>
+</head>
+<body>
+    <h1>This is a square function:</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button onclick="squareIt()">Enter</button>
+    <h2 id="output"></h2>
+    <script>
+        function squareIt() {
+            let inputElement = document.getElementById("numberInput");
+            let number = inputElement.value;
+
+            // Get the closure function
+            const squareFunction = createSquareFunction();
+
+            // Check if the input is a valid number
+            if (number !== "" && !isNaN(number)) {
+                let squaredNumber = squareFunction(number);
+                document.getElementById("output").textContent = `Square of ${number} is ${squaredNumber}`;
+            } else {
+                document.getElementById("output").textContent = "Please enter a valid number.";
+            }
+        }
+    </script>
+</body>
+</html>
