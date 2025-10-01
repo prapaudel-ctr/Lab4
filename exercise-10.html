@@ -13,11 +13,7 @@
         function squareIt() {
             let inputElement = document.getElementById("numberInput");
             let number = inputElement.value;
-
-            // Get the closure function
             const squareFunction = createSquareFunction();
-
-            // Check if the input is a valid number
             if (number !== "" && !isNaN(number)) {
                 let squaredNumber = squareFunction(number);
                 document.getElementById("output").textContent = `Square of ${number} is ${squaredNumber}`;
